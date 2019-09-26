@@ -2,7 +2,7 @@ OwnProjects.
 Intervall study,
   a terminal application,
   based on pomodoro;
-    ,25 min work
+    25 min work,
     5 min break.
   Uses time intervall based on chinese study about work break ratio.
   User decide how long a work session is;
