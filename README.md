@@ -1,4 +1,4 @@
- OwnProjects
+OwnProjects.
 Intervall study
   a terminal application
   based on pomodoro;
