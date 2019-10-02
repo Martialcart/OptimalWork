@@ -6,6 +6,7 @@ class TimeHandler {
     private static final int MILLISEC_SEC = 1000;
     private static final int SEC_MINUTE = 60;
     private static final int WORK_INTERVALS = 4;
+    private static final double PAUSE_RATIO = (17.0 / 52.0); //chinese study.  combining both...(A * Math.pow(B,workMinute));;
 
     public static void main(String[] args) {
         long longPause = 0;
@@ -66,7 +67,7 @@ class TimeHandler {
         final double B = 1.046367;
         final double A = 1.610126;
         double workMinute = 1.0 * workMilliSec / MILLISEC_SEC / SEC_MINUTE;
-        double pauseMinutes = workMinute * (17.0 / 52.0); //chinese study.  combining both...(A * Math.pow(B,workMinute));
+        double pauseMinutes = workMinute * PAUSE_RATIO;
         double pauseMillisecs = pauseMinutes * MILLISEC_SEC * SEC_MINUTE;
         return (long) pauseMillisecs;
     }
