@@ -43,6 +43,11 @@ class TimeHandler {
             longPause = 0;
         }
     }
+
+    /**
+     * prints menu
+     * @param interval number of current work session
+     */
     private static menuPrint(int interval) {
         System.out.println(
                 "Press enter to begin interval " + interval + "\n" +
