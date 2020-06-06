@@ -28,7 +28,7 @@ class TimeHandler {
                 longPause += pause;
                 countDown(pause);
             }
-            menuPrint();
+            menuPrint(WORK_INTERVALS);
             enterSwitch();
             longPause += workCycle();
             System.out.println("Long pause");
@@ -36,7 +36,7 @@ class TimeHandler {
             longPause = 0;
         }
     }
-    private static menuPrint() {
+    private static menuPrint(int interval) {
         System.out.println(
                 "Press enter to begin interval " + interval + "\n" +
                 "Super pause = " + clockTime(longPause));
