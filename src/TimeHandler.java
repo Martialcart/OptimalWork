@@ -22,7 +22,7 @@ class TimeHandler {
         long pause;
         while (true) {
             for (int interval = 1; interval < WORK_INTERVALS; interval++) {
-                menuPrint():
+                menuPrint(interval):
                 enterSwitch();
                 pause = workCycle();
                 longPause += pause;
