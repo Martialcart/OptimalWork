@@ -22,23 +22,24 @@ class TimeHandler {
         long pause;
         while (true) {
             for (int interval = 1; interval < WORK_INTERVALS; interval++) {
-                System.out.println(
-                        "Press enter to begin interval " + interval + "\n" +
-                        "Super pause = " + clockTime(longPause));
+                menuPrint():
                 enterSwitch();
                 pause = workCycle();
                 longPause += pause;
                 countDown(pause);
             }
-            System.out.println(
-                    "Press enter to begin interval " + WORK_INTERVALS + "\n" +
-                            "Super pause = " + clockTime(longPause));
+            menuPrint();
             enterSwitch();
             longPause += workCycle();
             System.out.println("Long pause");
             countDown(longPause);
             longPause = 0;
         }
+    }
+    private static menuPrint() {
+        System.out.println(
+                "Press enter to begin interval " + interval + "\n" +
+                "Super pause = " + clockTime(longPause));
     }
     /**
      *
