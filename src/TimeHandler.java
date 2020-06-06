@@ -23,13 +23,13 @@ class TimeHandler {
     private static final int MILLISEC_SEC = 1000;
     private static final int WORK_INTERVALS = 4;
     private static final double PAUSE_RATIO = (17.0 / 52.0); //Julia Gifford research
-
+    private static long longPause;
     public static void main(String[] args) {
-        long longPause = 0;
+        longPause = 0;
         long pause;
         while (true) {
             for (int interval = 1; interval < WORK_INTERVALS; interval++) {
-                menuPrint(interval):
+                menuPrint(interval);
                 enterSwitch();
                 pause = workCycle();
                 longPause += pause;
@@ -48,7 +48,7 @@ class TimeHandler {
      * prints menu
      * @param interval number of current work session
      */
-    private static menuPrint(int interval) {
+    private static void menuPrint(int interval) {
         System.out.println(
                 "Press enter to begin interval " + interval + "\n" +
                 "Super pause = " + clockTime(longPause));
