@@ -2,11 +2,20 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
+/**
+ * Julia Gifford research
+ * tracked employees. what top 10% most effective employees had in common:
+ * working 52 minutes
+ * pausing 17 minutes
+ * https://www.themuse.com/advice/the-rule-of-52-and-17-its-random-but-it-ups-your-productivity
+ *
+ * @author Jan Olav Berg
+ */
+
 class TimeHandler {
     private static final int MILLISEC_SEC = 1000;
-    private static final int SEC_MINUTE = 60;
     private static final int WORK_INTERVALS = 4;
-    private static final double PAUSE_RATIO = (17.0 / 52.0); //chinese study.  combining both...(A * Math.pow(B,workMinute));;
+    private static final double PAUSE_RATIO = (17.0 / 52.0); //Julia Gifford research
 
     public static void main(String[] args) {
         long longPause = 0;
@@ -41,8 +50,7 @@ class TimeHandler {
                 "Press enter for pause");
         long workTime = stopWatch();
         System.out.println("worked for: " + clockTime(workTime));
-        long pause = calcPause(workTime);
-        return pause;
+        return calcPause(workTime);
     }
     private static void countDown(long milliSec) {
         long goal = System.currentTimeMillis() + milliSec;
@@ -54,22 +62,11 @@ class TimeHandler {
     }
 
     /**
-     * W = A*B^P      P = Pause, W = Work,
-     *
-     * chinese study suggest W = 52 then P = 17
-     * spanish student found W = 25 then P = 5
-     *
      * @param workMilliSec work-time in milliseconds
      * @return pause-time in milliseconds
      */
     private static long calcPause(long workMilliSec) {
-        //factors A and B is only calculated for minutes
-        final double B = 1.046367;
-        final double A = 1.610126;
-        double workMinute = 1.0 * workMilliSec / MILLISEC_SEC / SEC_MINUTE;
-        double pauseMinutes = workMinute * PAUSE_RATIO;
-        double pauseMillisecs = pauseMinutes * MILLISEC_SEC * SEC_MINUTE;
-        return (long) pauseMillisecs;
+        return (long) (workMilliSec * PAUSE_RATIO);
     }
 
     /**
@@ -104,7 +101,6 @@ class TimeHandler {
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         return sdf.format(cal.getTime());
     }
-
     /**
      * halts the thread until enter is pressed
      */
