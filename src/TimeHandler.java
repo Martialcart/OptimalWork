@@ -3,11 +3,18 @@ import java.util.Calendar;
 import java.util.Scanner;
 
 /**
- * Julia Gifford research
- * tracked employees. what top 10% most effective employees had in common:
- * working 52 minutes
- * pausing 17 minutes
- * https://www.themuse.com/advice/the-rule-of-52-and-17-its-random-but-it-ups-your-productivity
+ * The program calculates optimal break time after a work session.
+ *
+ * formula: OptimalPause = worktime  *  (optimalPause / OptimalWorktime)
+ *
+ *
+ * based on Julia Gifford's research:
+ * She tracked employees.
+ * What the top 10% most effective employees had in common:
+ * -working 52 minutes
+ * -pausing 17 minutes
+ *
+ * article: https://www.themuse.com/advice/the-rule-of-52-and-17-its-random-but-it-ups-your-productivity
  *
  * @author Jan Olav Berg
  */
